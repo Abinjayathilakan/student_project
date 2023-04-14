@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+   <style>
+        .form-control {
+            width: 50%;
+        }
+        h1 {
+          font-weight: 600;
+          color:green;
+        }
+        
+        
+       
+    </style> 
+    {% load static %}
+</head>
+<h1 align="center">STUDENT FORM !!!</h1>
+<body style="background-image:url('{% static "images/wal.jpg" %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <form action="{% url 'add_student' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>Student_name</label>
+                        <input class="form-control" type="text" name="Student_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input class="form-control" type="text" name="Address">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input class="form-control" type="number" name="Age">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" type="Email" name="Email">
+                    </div>
+                    <div class="form-group">
+                        <label>Joining_date</label>
+                        <input class="form-control" type="date" name="Joining_date">
+                    </div>
+                    <div class="form-group">
+                        <label>Qualification</label>
+                        <select class="form-control " name="Qualification" required >
+                          <option value="" disabled selected>Select qualifiction</option>
+                          <option value="bca">BCA</option>
+                          <option value="bba">BBA</option>
+                          <option value="bcom">BCOM</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="Gender" id="male" value="male">
+                          <label class="form-check-label" for="male">
+                            Male
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="Gender" id="female" value="female">
+                          <label class="form-check-label" for="female">
+                            Female
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                          <label class="form-check-label" for="other">
+                            Other
+                          </label>
+                        </div>
+                      </div>
+                      
+                    <div class="form-group">
+                        <label>Mobile_number</label>
+                        <input class="form-control" type="text" name="Mobile_number">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-warning my-4 mx-auto ">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
